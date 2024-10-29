@@ -32,7 +32,7 @@ public class svAddCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int dni=Integer.parseInt(request.getParameter("dni"));
+        
         
         
     }
