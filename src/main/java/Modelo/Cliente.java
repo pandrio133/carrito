@@ -110,12 +110,6 @@ public class Cliente implements Serializable {
     }
     public void guadarDatos(Cliente nv){
        
-        try {
-          
-        } catch (Exception ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
     }
     
     public void guardarTarjeta(int tarjeta){
