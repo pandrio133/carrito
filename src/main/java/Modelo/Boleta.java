@@ -1,25 +1,12 @@
 
 package Modelo;
 
+public class Boleta {
 
-import jakarta.persistence.Column;
-import java.io.Serializable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity(name = "BOLETA") 
-@Table(name = "boleta")
-public class Boleta implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name = "id_pedido")
+   
     private int id_pedido;
-    @Column(name = "total")
+
     private double saldo;
 
     

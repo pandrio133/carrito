@@ -1,30 +1,14 @@
 
 package Modelo;
 
+public class Productos {
 
-
-
-
-import jakarta.persistence.Column;
-import java.io.Serializable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity(name = "PRODUCTO")
-@Table(name = "producto")
-public class Productos implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
-    @Column(name = "nombre")
+
     private String nombre;
-    @Column(name = "precio")
+
     private double precio;
-    @Column(name = "stock")
+    
     private int stock;
 
     public Productos() {

@@ -1,38 +1,22 @@
 
 package Modelo;
 
-
-import jakarta.persistence.Column;
-import java.io.Serializable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import java.util.Date;
+import java.sql.Date;
 
 
-@Entity(name = "PEDIDO")
-@Table(name = "pedido")
-public class Pedido implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+public class Pedido {
+   
     private int id;
-    @Column(name = "id_operacion")
+    
     private int nro_Oprc;
-    @Column(name = "id_detalles")
+
     private int id_detalles_pddo;
-    @Column(name = "estado")
+    
     private String estado;
     
-    @Column(name = "fecha_entrega")
-    @Temporal(TemporalType.DATE)
     private Date fech_entrega;
     
-    @Column(name = "fecha_pedido")
-    @Temporal(TemporalType.DATE)
     private Date fech_pddo;
 
     public Pedido() {

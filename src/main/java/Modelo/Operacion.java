@@ -1,26 +1,12 @@
 
 package Modelo;
 
-
-import jakarta.persistence.Column;
-import java.io.Serializable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
-@Entity(name = "OPERACION")
-@Table(name = "operacion")
-public class Operacion implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class Operacion {
+  
     private int operacion;
-    @Column(name = "id_cliente")
+   
     private int cliente_id;
-    @Column(name = "direccion")
+   
     private String direc_envio;
 
     public Operacion() {
