@@ -1,32 +1,16 @@
 
 package Modelo;
 
-
-import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
-@Entity(name = "CLIENTE")
-@Table(name = "cliente")
-public class Cliente implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Cliente {
+  
     private int dni;
-    @Column(name = "nombre")
+
     private String nombre;
-    @Column(name = "correo")
+
     private String correo;
-    @Column(name = "tel")
+
     private int tel;
-    @Column(name = "tarjeta")
+
     private int tarjeta;
     
     //
