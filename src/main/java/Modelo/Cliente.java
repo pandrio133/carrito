@@ -1,6 +1,10 @@
 
 package Modelo;
 
+import Conexion.Conexion;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class Cliente {
   
     private int dni;
@@ -93,7 +97,19 @@ public class Cliente {
         
     }
     public void guadarDatos(Cliente nv){
-       
+        String query = "insert into cliente(dni, nombre, correo,  tel) values ("+ nv.getDni() +","+ nv.getNombre() +","+ nv.getCorreo() +","+ nv.getTel() +");";
+        String query2 = "select dni from cliente where dni="+nv.getDni()+";";
+        Conexion con = new Conexion();
+       try {
+            Statement st = con.Conexion().createStatement();
+            st.executeQuery(query);
+            ResultSet rs = st.executeQuery(query2);
+            if (rs.next()) {
+                System.out.println("cliente registrado");
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
     }
     
     public void guardarTarjeta(int tarjeta){
