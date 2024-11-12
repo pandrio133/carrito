@@ -2,8 +2,6 @@
 package Modelo;
 
 import Conexion.Conexion;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class Cliente {
   
@@ -97,19 +95,15 @@ public class Cliente {
         
     }
     public void guadarDatos(Cliente nv){
-        String query = "insert into cliente(dni, nombre, correo,  tel) values ("+ nv.getDni() +","+ nv.getNombre() +","+ nv.getCorreo() +","+ nv.getTel() +");";
-//        String query2 = "select dni from cliente where dni="+nv.getDni()+";";
-        Conexion con = new Conexion();
-       try {
-            Statement st = con.Conexion().createStatement();
-            st.executeQuery(query);
-//            ResultSet rs = st.executeQuery(query2);
-//            if (rs.next()) {
-//                System.out.println("cliente registrado");
-//            }
-        } catch (Exception e) {
-            System.err.println(e);
-        }
+        System.out.println(nv.getCorreo());
+        System.out.println(nv.getNombre());
+        System.out.println(nv.getDni());
+        System.out.println(nv.getTel());
+
+// tabla a utilizar es --> "cliente" <-- tal como esta
+        Conexion cons = new Conexion();
+        cons.Create("cliente");
+       
     }
     
     public void guardarTarjeta(int tarjeta){
