@@ -79,7 +79,7 @@ public class Cliente {
     }
 
     //metodos personalizados
-    
+    private Conexion cons = new Conexion();
     
     public void pedir(){
         
@@ -92,8 +92,15 @@ public class Cliente {
         
     }
     public void verStdPedido(){
+
         
     }
+    public void verDatos(){
+        // tabla a utilizar es --> "cliente" <-- tal como esta
+        cons.Read("cliente", 5);
+        
+    }
+    
     public void guadarDatos(Cliente nv){
         System.out.println(nv.getCorreo());
         System.out.println(nv.getNombre());
@@ -101,8 +108,10 @@ public class Cliente {
         System.out.println(nv.getTel());
 
 // tabla a utilizar es --> "cliente" <-- tal como esta
-        Conexion cons = new Conexion();
+        
         cons.Create("cliente");
+        
+        
        
     }
     
