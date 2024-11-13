@@ -9,9 +9,15 @@ public class test {
 //        Conexion con= new Conexion();
 //        con.Conexion(); 
         
-        Cliente nvC = new Cliente(123, "correo", "nombre", 123);
+        Cliente nvC = new Cliente();
         
-        nvC.guadarDatos(nvC);
+        nvC.setDni(123);
+        nvC.setCorreo("correoJuan");
+        nvC.setNombre("pedro");
+        nvC.setTel(1234);
+        
+        
+        nvC.verDatos();
     }
     
 }
