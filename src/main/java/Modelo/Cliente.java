@@ -2,6 +2,7 @@
 package Modelo;
 
 import Conexion.Conexion;
+import java.util.ArrayList;
 
 public class Cliente {
   
@@ -95,10 +96,17 @@ public class Cliente {
 
         
     }
-    public void verDatos(){
+    public ArrayList verDatos(){
         // tabla a utilizar es --> "cliente" <-- tal como esta
-        cons.Read("cliente", 5);
-        
+        ArrayList <String> c_Datos = cons.Read("cliente",5);
+        int i=0;
+        while(i<c_Datos.size()&&c_Datos!=null){
+            
+            System.out.println(c_Datos.get(i));
+            i++;
+        }
+        i=0;
+        return c_Datos;
     }
     
     public void guadarDatos(Cliente nv){
@@ -108,11 +116,7 @@ public class Cliente {
         System.out.println(nv.getTel());
 
 // tabla a utilizar es --> "cliente" <-- tal como esta
-        
-        cons.Create("cliente");
-        
-        
-       
+
     }
     
     public void guardarTarjeta(int tarjeta){
