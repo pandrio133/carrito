@@ -17,8 +17,9 @@ public class Conexion {
     private final String pass = "";
     private final String url = "jdbc:mysql://localhost:3306/" + bd;
     
-    //variables de consulta Statement y ResultSet
+    //variables de consulta Statement, PrepareStatement y ResultSet
     private Statement st;
+    private PreparedStatement pst;
     private ResultSet rs;
 
     public Conexion() {
@@ -51,20 +52,73 @@ public class Conexion {
     // C-R-U-D
     
     //create
-    public void Create( String tabla){
-        
-        String query = "select * from "+tabla+" ;";
-
+    public void Create( String tabla,String columna,String valor){
+        String query="insert into "+tabla+"("+columna+") value (?)";
         try {
-            st = Conectar().createStatement();
-            rs = st.executeQuery(query);
-            System.out.println("Ingreso realizado correctamente.");
+            pst=Conectar().prepareStatement(query); 
+            pst.setString(1,valor);
+            pst.executeUpdate();
+            System.out.println("Insertado");
         } catch (Exception e) {
             System.err.println(e);
         }
-        
     }
-    
+//------------------------------------------------------------------------------
+    public void Create( String tabla,String columna,int valor){
+        String query="insert into "+tabla+"("+columna+") value (?)";
+        try {
+            pst=Conectar().prepareStatement(query); 
+            pst.setInt(1,valor);
+            pst.executeUpdate();
+            System.out.println("Insertado");
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }
+//------------------------------------------------------------------------------
+    public void Create( String tabla,String colId,int id,String columna,String valor){
+        String query="insert into "+tabla+"("+colId+","+columna+") value (?,?)";
+        try {
+            pst=Conectar().prepareStatement(query); 
+            pst.setInt(1,id);
+            pst.setString(2,valor);
+            pst.executeUpdate();
+            System.out.println("Insertado");
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }
+//------------------------------------------------------------------------------
+     public void Create( String tabla,String colId,int id,String columna,int valor){
+        String query="insert into "+tabla+"("+colId+","+columna+") value (?,?)";
+        try {
+            pst=Conectar().prepareStatement(query); 
+            pst.setInt(1,id);
+            pst.setInt(2,valor);
+            pst.executeUpdate();
+            System.out.println("Insertado");
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }  
+//------------------------------------------------------------------------------
+//     public void Create( String tabla, columna,int valor){
+//        String query="insert into "+tabla+"("+columna+") value (?,?)";
+//        try {
+//            pst=Conectar().prepareStatement(query); 
+//            pst.setInt(1,id);
+//            pst.setInt(2,valor);
+//            pst.executeUpdate();
+//            System.out.println("Insertado");
+//        } catch (Exception e) {
+//            System.err.println(e);
+//        }
+//    }  
+     
+     
+     
+     
+     
     //read
     public ArrayList Read (String tabla, int NColumnas){
         
@@ -148,9 +202,43 @@ public class Conexion {
     
     
     //update
+    public void Update (String tabla , String nomId,int id, String columna,String valor){
+//  el parametros tabla indica la tabla de la base de datos
+//  el parametro nomId es como se llama la columna que llevas las llaves primarias
+//  el parametro id seleciona la fila que contega el volor id indicado
+//  el parametro colummna seleciona la coluna a cambiar
+//  el parametro ingresa el valor que se va a ingresar
+        String query = "update "+tabla+" set "+columna+" = ? where "+nomId+" = ?;";        
+        try {
+             pst=Conectar().prepareStatement(query);
+             pst.setString(1,valor);
+             pst.setInt(2, id);
+             pst.executeUpdate();
+             System.out.println("Usuario actualizado correctamente.");
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }
+// -----------------------------------------------------------------------------
+    public void Update (String tabla , String nomId,int id, String columna,int valor){
+        String query = "update "+tabla+" set "+columna+" = ? where "+nomId+" = ?;";        
+        try {
+             pst=Conectar().prepareStatement(query);
+             pst.setInt(1,valor);
+             pst.setInt(2, id);
+             pst.executeUpdate();
+             System.out.println("Usuario actualizado correctamente.");
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }
+// -----------------------------------------------------------------------------
+    
+    
     
     
     //delete
+    
     
     
 }
