@@ -162,6 +162,7 @@
                     <div class="col-lg-8">
                         <div class="checkout-accordion-wrap">
                             <div class="accordion" id="accordionExample">
+                                <!--------------------------------------------->
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0">
@@ -170,7 +171,6 @@
                                             </button>
                                         </h5>
                                     </div>
-
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="billing-address-form">
@@ -187,6 +187,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--------------------------------------------->
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingTwo">
                                         <h5 class="mb-0">
@@ -205,6 +206,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--------------------------------------------->
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingThree">
                                         <h5 class="mb-0">
@@ -216,18 +218,19 @@
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class=" shipping-address-form billing-address-form">
-                                                <form action="svOperacion">
+                                                <form action="svOperacion" method="post">
                                                     <p><input type="text" placeholder="Dirección" name="dir"></p>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!------------------------------------------- -->
                             </div>
 
                         </div>
                     </div>
-
+<!------------------------------------------------------------------------------ -->
                     <div class="col-lg-4">
                         <div class="order-details-wrap">
                             <table class="order-details">
@@ -270,9 +273,10 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="boxed-btn">Place Order</a>
+                            <a id="envio" class="boxed-btn" href="#">Place Order</a>
                         </div>
                     </div>
+<!------------------------------------------------------------------------------ -->
                 </div>
             </div>
         </div>
