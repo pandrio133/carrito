@@ -31,7 +31,8 @@
         <link rel="stylesheet" href="assets/css/main.css">
         <!-- responsive -->
         <link rel="stylesheet" href="assets/css/responsive.css">
-
+        <!-- estilo personalizado  -->
+        <link href="assets/css/style1.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
 
@@ -155,14 +156,14 @@
         </div>
         <!-- end breadcrumb section -->
 
-        <!-- check out section -->
+        <!-- check out section 
         <div class="checkout-section mt-150 mb-150">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="checkout-accordion-wrap">
                             <div class="accordion" id="accordionExample">
-                                <!--------------------------------------------->
+                               
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0">
@@ -181,13 +182,14 @@
                                                     <p><input type="tel" placeholder="Telefono" name="tel"></p>
                                                     <!--
                                                     <p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
-                                                    -->
+                                                    
+                                                    
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--------------------------------------------->
+
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingTwo">
                                         <h5 class="mb-0">
@@ -206,7 +208,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--------------------------------------------->
+                               
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingThree">
                                         <h5 class="mb-0">
@@ -225,12 +227,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!------------------------------------------- -->
+                                
                             </div>
 
                         </div>
                     </div>
-<!------------------------------------------------------------------------------ -->
+
                     <div class="col-lg-4">
                         <div class="order-details-wrap">
                             <table class="order-details">
@@ -273,15 +275,36 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a id="envio" class="boxed-btn" href="#">Place Order</a>
+                            <a id="envio" class="boxed-btn" href="svAddCliente">Place Order</a>
                         </div>
                     </div>
-<!------------------------------------------------------------------------------ -->
+
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- end check out section -->
-
+        
+        <!-- Inicio de Formulario para datos del cliente -->
+        <section>
+            <div>
+                <div class="">
+                    <span class="h1"> Datos del Cliente </span>
+                </div>
+                <div>
+                    <form action="svAddCliente" method="post">
+                        <p><input type="number" name="dni" value="" max="99999999" maxlength="8" placeholder="DNI"></p> 
+                        <p><input type="text" name="nombre" value="" placeholder="Nombre"></p> 
+                        <p><input type="text" name="correo" value="" placeholder="Correo"></p> 
+                        <p><input type="tel" name="tel" value="" max="999999999" maxlength="9"  placeholder="Telefono"></p> 
+                        
+                        <p><input class="h4 btn" type="submit" value="Enviar" placeholder="Seguir"></p>
+                        
+                    </form>
+                </div>    
+            </div>
+        </section>
+        <!-- Final de Formulario para datos del cliente -->
+        
         <!-- logo carousel -->
         <div class="logo-carousel-section">
             <div class="container">
